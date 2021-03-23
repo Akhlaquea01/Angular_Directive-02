@@ -1,0 +1,80 @@
+<!-- Structured Directive -->
+<h1 style="color: blueviolet;">Structured Directive</h1>
+<!-- If Else -->
+<h1>If Else</h1>
+<p *ngIf="show else elseBlock">if conditon is true</p>
+<ng-template #elseBlock><p>else block is dispaly</p></ng-template>
+<hr>
+
+
+<!-- make condition with string -->
+<h1>If else using String</h1>
+<p *ngIf="show1=='yes' then ifBlock1 else elseBlock1"></p>
+<ng-template #ifBlock1>
+  <p>if block is dispaly</p>
+</ng-template>
+<ng-template #elseBlock1>
+  <p>else block is dispaly</p>
+</ng-template>
+
+<div>
+  <span *ngIf = "isavailable2; then condition2 else condition1">
+     Condition is valid.
+  </span>
+  <ng-template #condition1>Condition is invalid</ng-template>
+  <ng-template #condition2>Condition is valid</ng-template>
+</div>
+<hr>
+
+
+<!-- make condition with property binding -->
+<h1>make condition with property binding</h1>
+<ng-template [ngIf]="user=='firoz'">
+<p>Red block</p>
+</ng-template>
+<hr>
+
+
+<!-- switch case in angular -->
+<h1>Switch case in Angular</h1>
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'red'" style="color: red;">Red color</p>
+  <p *ngSwitchCase="'green'" style="color: greenyellow;">Green color</p>
+  <p *ngSwitchCase="'blue'" style="color: blue;">Blue color</p>
+  <p *ngSwitchDefault style="color: rgb(255, 47, 175);">Default case</p>
+</div>
+<button (click)="changeColor()">Reset</button>
+<input type="text" [(ngModel)]="color"><hr>
+
+<!-- for loop in angular -->
+<h1>For loop in Angular</h1>
+<p *ngFor="let item of data">
+  {{item}}
+</p><hr>
+
+<h1>For loop in Array of Object</h1>
+<h3 *ngFor="let item1 of data1">
+  <p>My name is {{item1.name}}, my age is {{item1.age}} and I am  {{item1.work}}</p>
+</h3><hr>
+
+<h1>Table from for loop</h1>
+<table border="1">
+  <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Department</td>
+  </tr>
+  <tr *ngFor="let item2 of data1">
+      <td>{{item2.name}}</td>
+      <td>{{item2.age}}</td>
+      <td>{{item2.work}}</td>
+  </tr>
+</table>
+<hr>
+
+
+
+<!-- Attribute Directive -->
+<h1 style="color: blueviolet;">Attribute Directive</h1>
+
+
